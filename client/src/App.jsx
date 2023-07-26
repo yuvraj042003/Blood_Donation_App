@@ -11,11 +11,29 @@ import PublicRoute from './components/Routes/PublicRoute';
 import Donar from './pages/Dashboard/Donar';
 import Hospitals from './pages/Dashboard/Hospitals';
 import OrgnisationPage from './pages/Dashboard/OrgnisationPage';
+import Consumer from './pages/Dashboard/Consumer';
+import Donation from './pages/Donation';
+import Analytics from './pages/Dashboard/Analytics';
 function App() {
   return (
     <>
       <ToastContainer />
       <Routes>
+      <Route path='/analytics' element={
+          <ProtectedRoute>
+            <Analytics />
+          </ProtectedRoute>
+        } />
+      <Route path='/donation' element={
+          <ProtectedRoute>
+            <Donation />
+          </ProtectedRoute>
+        } />
+      <Route path='/consumer' element={
+          <ProtectedRoute>
+            <Consumer />
+          </ProtectedRoute>
+        } />
       <Route path='/orgnaisation' element={
           <ProtectedRoute>
             <OrgnisationPage />

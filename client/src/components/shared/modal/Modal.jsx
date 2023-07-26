@@ -9,6 +9,7 @@ const Modal = () => {
     const [quantity, setQuantity] = useState(0);
     const [email, setEmail] = useState("");
     const { user } = useSelector((state) => state.auth);
+    
     // handle modal data
     const handleModalSubmit = async () => {
         try {
@@ -17,7 +18,6 @@ const Modal = () => {
             }
             const { data } = await API.post("/inventory/create-inventory", {
                 email,
-                email:user?.email,
                 organisation: user?._id,
                 inventoryType,
                 bloodGroup,

@@ -13,6 +13,8 @@ const router = express.Router();
 router.post('/create-inventory', authMiddleware, createInventryController);
 // Get All records
 router.get('/get-inventory', authMiddleware, getInventoryController)
+// Get Hospital records
+router.post('/get-inventory-hospital', authMiddleware, getOrgnaisationForHospitalController)
 // Get Donars Record
 router.get('/get-donars', authMiddleware, getDonarController)
 // Get Hospitals Record
