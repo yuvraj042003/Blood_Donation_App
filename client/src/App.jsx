@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import "./App.css"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProtectedRoute from './components/Routes/ProtectedRoute';
 import PublicRoute from './components/Routes/PublicRoute';
@@ -14,6 +14,8 @@ import OrgnisationPage from './pages/Dashboard/OrgnisationPage';
 import Consumer from './pages/Dashboard/Consumer';
 import Donation from './pages/Donation';
 import Analytics from './pages/Dashboard/Analytics';
+import DonarList from './pages/Admin/DonarList';
+import AdminHome from './pages/Admin/AdminHome';
 function App() {
   return (
     <>
@@ -37,6 +39,26 @@ function App() {
       <Route path='/orgnaisation' element={
           <ProtectedRoute>
             <OrgnisationPage />
+          </ProtectedRoute>
+        } />
+        <Route path='/home-admin' element={
+          <ProtectedRoute>
+            <AdminHome />
+          </ProtectedRoute>
+        } />
+        <Route path='/donar-list' element={
+          <ProtectedRoute>
+            <DonarList />
+          </ProtectedRoute>
+        } />
+        <Route path='/org-list' element={
+          <ProtectedRoute>
+            <OrgnisationPage />
+          </ProtectedRoute>
+        } />
+        <Route path='/hospital-list' element={
+          <ProtectedRoute>
+            <Hospitals />
           </ProtectedRoute>
         } />
       <Route path='/hospital' element={

@@ -23,6 +23,8 @@ app.use(helmet());
 app.use('/api/v1', require('./routes/testRoutes'))
 app.use('/api/v1/auth', require('./routes/authRoutes'))
 app.use('/api/v1/inventory', require('./routes/inventoryRoutes'))
+app.use('/api/v1/analytics', require('./routes/AnalyticsRoutes'));
+app.use('/api/v1/admin', require('./routes/AdminRoutes'));
 // Error Handling
 app.use((err, req, res, next) => {
     console.error(err.stack);

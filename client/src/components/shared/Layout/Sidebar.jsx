@@ -42,6 +42,14 @@ const Sidebar = () => {
           )}
           {user?.role === "admin" && (
             <>
+            <div
+                className={`menu-item ${
+                  location.pathname === "/home-admin" && "active"
+                }`}
+              >
+                <i className="fa-solid fa-user"></i>
+                <Link to="/home-admin">Admin</Link>
+              </div>
               <div
                 className={`menu-item ${
                   location.pathname === "/donar-list" && "active"
@@ -66,6 +74,7 @@ const Sidebar = () => {
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/org-list">Organisation List</Link>
               </div>
+              
             </>
           )}
           {(user?.role === "donar" || user?.role === "hospital") && (
