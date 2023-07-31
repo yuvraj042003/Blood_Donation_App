@@ -11,12 +11,13 @@ export const handleLogin = (e, email, password, role) => {
         console.log(error)
     }
 }
-export const handleRegister = (e, name, email, password, role, organisationName, hospitalName, website, address, phone) => {
+export const handleRegister = ({e, name, email, password, role, organisationName, hospitalName, website, address, phone}) => {
     e.preventDefault()
     try {
-        if (!organisationName) {
-            return alert("Ghar ka pta nhi hai kya");
-        }
+        // if (!organisationName) {
+        //     return alert("Ghar ka pta nhi hai kya");
+        // }
+        console.log(name, email, password, role, address,phone, website);
 
         store.dispatch(userRegister({
             name,

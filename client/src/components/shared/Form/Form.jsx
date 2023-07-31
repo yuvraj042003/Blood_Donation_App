@@ -17,11 +17,13 @@ const Form = ({ formType, submitBtn, formTitle }) => {
     <div>
       <form
         onSubmit={(e) => {
+          console.log(name, email, password, role, address,phone, website);
+
           if (formType === "login")
             return handleLogin(e, email, password, role);
           else if (formType === "register")
             return handleRegister(
-              e,
+              {e,
               name,
               role,
               email,
@@ -30,7 +32,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               organisationName,
               address,
               hospitalName,
-              website
+              website}
             );
         }}
       >
@@ -195,7 +197,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               );
             }
           }
-        })()}
+          console.log("Role:------------>>>>>>>>", role);   })()}
         <div className="d-flex flex-row justify-content-between">
           {formType === "login" ? (
             <p>
