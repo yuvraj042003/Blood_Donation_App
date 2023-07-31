@@ -5,7 +5,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const { connectDB } = require('./config/db')
 const helmet = require('helmet');
-
+const path = require('path');
 // rest object
 const app = express();
 dotenv.config();
@@ -30,6 +30,13 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ error: 'Something went wrong!' });
   });
+  // Static Folder
+  app.use(express.static(path.join(__dirname,'./client/dist')));
+
+  // Static Routes
+  app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname, './client/dist/index.html'))
+  })
 //Port
 const PORT = process.env.PORT || 8080
 //listen
