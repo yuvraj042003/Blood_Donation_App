@@ -15,7 +15,7 @@ connectDB();
 
 //middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: 'https://blood-donation-frontend-green.vercel.app/'}));
 app.use(morgan('dev'))
 app.use(helmet());
 //routes
